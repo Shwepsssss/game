@@ -35,13 +35,13 @@
         android:text="Instructions"
         android:onClick="instructions"></Button>
 
-    <Button
-        android:id="@+id/b1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="LeaderBoard"
-        android:onClick="leaderboard"
-        ></Button>
+<!--    <Button-->
+<!--        android:id="@+id/b1"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="LeaderBoard"-->
+<!--        android:onClick="leaderboard"-->
+<!--        ></Button>-->
 
 
 </LinearLayout>
