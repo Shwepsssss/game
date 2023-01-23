@@ -1,0 +1,128 @@
+@startuml
+class com.example.game.Pcgame {
+- boolean left
+- boolean right
+- boolean up
+- boolean down
+- int x
+- int screenWidth
+- int screenHeight
+- ImageView arrowUp
+- ImageView arrowDown
+- ImageView arrowRight
+- ImageView arrowLeft
+- float arrowUpX
+- float arrowUpY
+- float arrowDownX
+- float arrowDownY
+- float arrowRightX
+- float arrowRightY
+- float arrowLeftX
+- float arrowLeftY
+- Handler handler
+- Timer timer
+- boolean pause_flg
+# void onCreate(Bundle)
++ void changePos()
++ void left(View)
++ void right(View)
++ void up(View)
++ void down(View)
++ void room3(View)
+}
+class com.example.game.Room3 {
+- boolean[] arr
+- Chronometer chronometer
+- Chronom c
+- boolean key
+# void onCreate(Bundle)
++ void room2(View)
++ void h(View)
++ void pcgame(View)
++ void keys(View)
+# void onActivityResult(int,int,Intent)
+}
+class com.example.game.Chronom {
++ long pauseOffset
++ {static} Creator<Chronom> CREATOR
++ <<Create>> Chronom(long)
+# <<Create>> Chronom(Parcel)
++ long getPauseOffset()
++ void setPauseOffset(long)
++ int describeContents()
++ void writeToParcel(Parcel,int)
++ void start(Chronometer)
++ void stop(Chronometer)
+}
+class com.example.game.Room4 {
+- boolean[] arr
+- Chronometer chronometer
+- boolean key
+- Chronom c
+# void onCreate(Bundle)
++ void room1(View)
++ void h(View)
+}
+class com.example.game.Room1 {
+- boolean[] arr
+- Chronometer chronometer
+- boolean key
+- long p
+- Chronom c
+# void onCreate(Bundle)
++ void room2(View)
++ void room4(View)
+# void onActivityResult(int,int,Intent)
++ void h(View)
+}
+class com.example.game.Pcgamewin {
+- TextView tv
+- int code
+# void onCreate(Bundle)
++ void pcgame(View)
+}
+class com.example.game.MainActivity {
+# void onCreate(Bundle)
++ void room1(View)
+}
+class com.example.game.Room2 {
+- boolean[] arr
+- Chronometer chronometer
+- Chronom c
+- boolean key
+# void onCreate(Bundle)
++ void room3(View)
++ void room1(View)
++ void drawer1(View)
+# void onActivityResult(int,int,Intent)
++ void h(View)
+}
+class com.example.game.Hint {
+- boolean[] arr
+- boolean key
++ <<Create>> Hint(boolean[],boolean)
++ boolean roomCheck(Activity)
++ boolean keyCheck(Activity)
+}
+class com.example.game.Drawer1 {
+- int screenWidth
+- ImageView iv
+- float arrowLeftX
+- Handler handler
+- Timer timer
+# void onCreate(Bundle)
++ void m(View)
++ void changePos()
+}
+
+
+androidx.appcompat.app.AppCompatActivity <|-- com.example.game.Pcgame
+androidx.appcompat.app.AppCompatActivity <|-- com.example.game.Room3
+android.os.Parcelable <|.. com.example.game.Chronom
+androidx.appcompat.app.AppCompatActivity <|-- com.example.game.Room4
+androidx.appcompat.app.AppCompatActivity <|-- com.example.game.Room1
+androidx.appcompat.app.AppCompatActivity <|-- com.example.game.Pcgamewin
+androidx.appcompat.app.AppCompatActivity <|-- com.example.game.MainActivity
+androidx.appcompat.app.AppCompatActivity <|-- com.example.game.Room2
+androidx.appcompat.app.AppCompatActivity <|-- com.example.game.Drawer1
+@enduml
